@@ -14,21 +14,28 @@ public class WalkState : PlayerStateBase
     public override void Start()
     {
         Debug.Log("Entering WALK state");
+        player.isOnGround = true;
     }
 
     public override void Update()
     {
-        Debug.Log("Updating WALK state");
-
-        player.input = player.masterControls.Player.Movement.ReadValue<Vector2>().normalized;
+        //Debug.Log("Updating WALK state");
 
         if ((player.input.x == 0f || player.input.y == 0f))
         {
+            player.rb.velocity = Vector3.zero;
             SwitchState(IdleState.ID);
             return;
         }
 
-        player.transform.position += new Vector3(player.input.x, 0, player.input.y) * Time.deltaTime * player.speed;
+        if (player.masterControls.Player.Jump.ReadValue<float>() == 1 && player.isOnGround)
+        {
+            SwitchState(JumpState.ID);
+            return;
+        }
+
+        //player.transform.position += new Vector3(player.input.x, 0, player.input.y) * Time.deltaTime * player.movementSpeed;
+        player.rb.velocity = new Vector3(player.input.x, 0, player.input.y) * player.movementSpeed;
         FlipSprite();
         AnimationSettings();
     }

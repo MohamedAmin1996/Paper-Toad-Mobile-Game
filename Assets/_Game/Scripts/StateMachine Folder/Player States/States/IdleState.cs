@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class IdleState : PlayerStateBase
 {
     public const string ID = "IDLE";
-
-
 
     public override string Initialize(StateMachine stateMachine)
     {
@@ -17,13 +16,12 @@ public class IdleState : PlayerStateBase
     public override void Start()
     {
         Debug.Log("Entering IDLE state");
+        player.isOnGround = true;
     }
 
     public override void Update()
     {
-        Debug.Log("Updating IDLE state");
-
-        player.input = player.masterControls.Player.Movement.ReadValue<Vector2>().normalized;
+        //Debug.Log("Updating IDLE state");
 
         if (player.input.x > 0 || player.input.y > 0 || player.input.x < 0 || player.input.y < 0)
         {
@@ -31,7 +29,13 @@ public class IdleState : PlayerStateBase
             return;
         }
 
-        player.spriteAnim.SetBool("isMoving", false);
+        if (player.masterControls.Player.Jump.ReadValue<float>() == 1 && player.isOnGround)
+        {
+            SwitchState(JumpState.ID);
+            return;
+        }
+
+        player.spriteAnim.SetBool("isMoving", false); 
     }
 
     public override void Exit()
