@@ -30,6 +30,8 @@ public class IdleState : PlayerStateBase
             SwitchState(WalkState.ID);
             return;
         }
+
+        player.spriteAnim.SetBool("isMoving", false);
     }
 
     public override void Exit()

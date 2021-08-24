@@ -22,7 +22,7 @@ public class MusicLooper : MonoBehaviour
     void Update()
     {
         currentPos = (float)audioSource.timeSamples;
-        Debug.Log(currentPos);
+        //Debug.Log(currentPos);
 
         if (currentPos >= endLoop)
         {

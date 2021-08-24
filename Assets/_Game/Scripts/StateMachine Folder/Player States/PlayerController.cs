@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : StateMachine
 {
     public MasterControls masterControls;
+    public Animator playerAnim;
+    public Animator spriteAnim;
+    public SpriteRenderer sr;
     public Vector2 input;
     public float speed = 5;
     protected override void Awake()
