@@ -39,7 +39,7 @@ public class @MasterControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""dfd3b339-abde-4e84-8709-971a8c68cb7b"",
-                    ""path"": ""<Touchscreen>/primaryTouch/press"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -48,59 +48,15 @@ public class @MasterControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""1b2877ea-0a00-4022-a3cb-9783c1872b9d"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""4cc22c0b-7d8c-4783-8633-90e9d706df8c"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Movement"",
-                    ""isComposite"": true,
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""fe4afccd-5b9e-427d-bdf1-51682db3cf5f"",
-                    ""path"": ""<Touchscreen>/delta/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""c36b2bb2-6ce2-4571-a391-4b4676ac463d"",
-                    ""path"": ""<Touchscreen>/delta/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""c3caafb0-a019-4e1b-aff5-43a03f5adca8"",
-                    ""path"": ""<Touchscreen>/delta/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""5cee022d-6722-435b-b239-e553bbb40996"",
-                    ""path"": ""<Touchscreen>/delta/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         }
