@@ -25,7 +25,7 @@ public class IdleState : PlayerStateBase
 
         player.input = player.masterControls.Player.Movement.ReadValue<Vector2>().normalized;
 
-        if (player.input.x > 0 || player.input.y > 0)
+        if (player.input.x > 0 || player.input.y > 0 || player.input.x < 0 || player.input.y < 0)
         {
             SwitchState(WalkState.ID);
             return;
