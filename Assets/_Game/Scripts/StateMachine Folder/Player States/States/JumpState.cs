@@ -16,8 +16,10 @@ public class JumpState : PlayerStateBase
     {
        Debug.Log("Entering JUMP state");
 
-        player.isOnGround = false;
+
+        player.rb.velocity = new Vector2(player.rb.velocity.x, 0);
         player.rb.AddForce(Vector2.up * player.jumpHeight, ForceMode.Impulse);
+        
     }
 
     public override void Update()

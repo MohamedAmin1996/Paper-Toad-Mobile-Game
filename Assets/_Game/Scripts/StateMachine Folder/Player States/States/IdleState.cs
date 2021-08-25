@@ -16,14 +16,14 @@ public class IdleState : PlayerStateBase
     public override void Start()
     {
         Debug.Log("Entering IDLE state");
-        player.isOnGround = true;
+        player.rb.velocity = new Vector2(0, player.rb.velocity.y);
     }
 
     public override void Update()
     {
         //Debug.Log("Updating IDLE state");
 
-        if (player.input.x > 0 || player.input.y > 0 || player.input.x < 0 || player.input.y < 0)
+        if (player.input.x != 0 || player.input.y != 0)
         {
             SwitchState(WalkState.ID);
             return;
@@ -45,6 +45,10 @@ public class IdleState : PlayerStateBase
 
     public override void FixedUpdate()
     {
-       
+        if (!player.isOnGround)
+        {
+            SwitchState(FallState.ID);
+            return;
+        }
     }
 }

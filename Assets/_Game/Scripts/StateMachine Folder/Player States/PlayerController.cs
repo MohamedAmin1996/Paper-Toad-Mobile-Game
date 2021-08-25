@@ -51,4 +51,12 @@ public class PlayerController : StateMachine
             isOnGround = true;
         }
     }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            isOnGround = false;
+        }
+    }
 }
