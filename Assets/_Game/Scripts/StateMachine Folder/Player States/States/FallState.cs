@@ -46,9 +46,6 @@ public class FallState : PlayerStateBase
 
     public override void FixedUpdate()
     {
-        //player.rb.AddForce(Vector2.right * player.input.x * player.movementSpeed);
-        //player.rb.AddForce(Vector3.forward * player.input.y * player.movementSpeed);
-
         player.rb.velocity = new Vector3(player.input.x * player.movementSpeed, player.rb.velocity.y, player.input.y * player.movementSpeed);
     }
 
