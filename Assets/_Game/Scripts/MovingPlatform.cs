@@ -6,20 +6,26 @@ public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] float maxHeight;
     [SerializeField] float moveSpeed;
-    Vector3 startPos;
+    public Rigidbody rb;
+    [SerializeField] Vector3 startPos;
+    [SerializeField] Vector3 endPos;
 
     private void Awake()
     {
-        startPos = transform.position;
+        startPos = rb.position;
+        endPos = new Vector3(startPos.x, startPos.y + maxHeight, startPos.z);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position += new Vector3(0, transform.position.y + moveSpeed, 0) * Time.deltaTime;
-        if (transform.position.y >= maxHeight)
+        rb.velocity =  new Vector2(0, rb.velocity.y + moveSpeed);
+        if (rb.position.y >= endPos.y)
         {
-            transform.position = startPos;
+            rb.velocity = Vector3.zero;
+            rb.position = startPos;
         }
     }
+
+    
 }

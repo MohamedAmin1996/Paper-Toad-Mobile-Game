@@ -34,7 +34,7 @@ public class JumpState : PlayerStateBase
 
     public override void FixedUpdate()
     {
-        if (player.rb.velocity.y < .5f)
+        if (player.rb.velocity.y < 0f)
         {
             SwitchState(FallState.ID);
             return;
