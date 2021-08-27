@@ -19,16 +19,14 @@ public class JumpState : PlayerStateBase
 
         player.rb.velocity = new Vector2(player.rb.velocity.x, 0);
         player.rb.AddForce(Vector2.up * player.jumpHeight, ForceMode.Impulse);
-        
+        AnimationSettings();
     }
 
     public override void Update()
     {
         //Debug.Log("Updating JUMP state");
 
-
-        FlipSprite();
-        AnimationSettings();
+        FlipSprite();      
     }
 
     public override void Exit()
@@ -65,49 +63,8 @@ public class JumpState : PlayerStateBase
 
     void AnimationSettings()
     {
-        if (player.input.y > 0 && player.input.x == 0) // North
-        {
-            player.spriteAnim.SetFloat("MoveY", 1);
-            player.spriteAnim.SetBool("isMoving", true);
-        }
-        else if (player.input.y > 0 && player.input.x > 0) // North East
-        {
-            player.spriteAnim.SetFloat("MoveY", 1);
-            player.spriteAnim.SetBool("isMoving", true);
-        }
-        else if (player.input.y == 0 && player.input.x > 0) // East
-        {
-            player.spriteAnim.SetFloat("MoveY", -1);
-            player.spriteAnim.SetBool("isMoving", true);
-        }
-        else if (player.input.y < 0 && player.input.x > 0) // South East
-        {
-            player.spriteAnim.SetFloat("MoveY", -1);
-            player.spriteAnim.SetBool("isMoving", true);
-        }
-        else if (player.input.y < 0 && player.input.x == 0) // South
-        {
-            player.spriteAnim.SetFloat("MoveY", -1);
-            player.spriteAnim.SetBool("isMoving", true);
-        }
-        else if (player.input.y < 0 && player.input.x < 0) // South West
-        {
-            player.spriteAnim.SetFloat("MoveY", -1);
-            player.spriteAnim.SetBool("isMoving", true);
-        }
-        else if (player.input.y == 0 && player.input.x < 0) // West
-        {
-            player.spriteAnim.SetFloat("MoveY", -1);
-            player.spriteAnim.SetBool("isMoving", true);
-        }
-        else if (player.input.y > 0 && player.input.x < 0) // North West
-        {
-            player.spriteAnim.SetFloat("MoveY", 1);
-            player.spriteAnim.SetBool("isMoving", true);
-        }
-        else
-        {
-            player.spriteAnim.SetBool("isMoving", false);
-        }
+        player.spriteAnim.SetBool("isJumping", true);
+        player.spriteAnim.SetBool("isFalling", false);
+
     }
 }
