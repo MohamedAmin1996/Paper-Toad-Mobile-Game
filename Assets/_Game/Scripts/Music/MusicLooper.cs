@@ -10,6 +10,8 @@ public class MusicLooper : MonoBehaviour
     AudioSource audioSource;
     float currentPos;
 
+    [SerializeField] float hZ;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -17,17 +19,22 @@ public class MusicLooper : MonoBehaviour
         startLoop = mySongInfo.startLoop;
         endLoop = mySongInfo.endLoop;
         audioSource.Play();
+
+        hZ = audioSource.clip.samples;
     }
 
     void Update()
     {
         currentPos = (float)audioSource.timeSamples;
-        //Debug.Log(currentPos);
+       // Debug.Log(currentPos);
 
         if (currentPos >= endLoop)
         {
+            //Debug.Log("Repeat");
             audioSource.timeSamples = (int)startLoop;
             audioSource.Play();
         }
+
+
     }
 }

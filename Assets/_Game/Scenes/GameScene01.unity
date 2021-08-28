@@ -740,49 +740,6 @@ Transform:
   m_Father: {fileID: 544027349}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &342429743
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 342429744}
-  - component: {fileID: 342429745}
-  m_Layer: 0
-  m_Name: Screen Settings
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &342429744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342429743}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 256.5365, y: 1497.1724, z: -4.517975}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &342429745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342429743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4162ddc0ab793346a9c15d0a4901b54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &425946699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6522964358846975712, guid: 768b320e77b509e4fb42ccfcd0a11241, type: 3}
@@ -1643,6 +1600,7 @@ MonoBehaviour:
   mySongInfo: {fileID: 11400000, guid: 266703653f0354a4d909f4f030a6e7de, type: 2}
   startLoop: 0
   endLoop: 0
+  hZ: 0
 --- !u!82 &980112284
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3649,6 +3607,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136750316}
   m_CullTransparentMesh: 1
+--- !u!1001 &5325230736326479061
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 256.5365
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1497.1724
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.517975
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663909, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325230736126663930, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
+      propertyPath: m_Name
+      value: Screen Settings
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 147c0eb39a6ea6142b1b564d39a02cfd, type: 3}
 --- !u!1001 &6522964359337659961
 PrefabInstance:
   m_ObjectHideFlags: 0

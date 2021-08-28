@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf9378dce0546f40a9fdfbfa432f241, type: 3}
+  m_Name: Title Theme - Paper Mario Sticker Star
+  m_EditorClassIdentifier: 
+  myClip: {fileID: 8300000, guid: ff6088208006d414e92b7cc725f5d311, type: 3}
+  startLoop: 252308
+  endLoop: 3017108
+  samplingRate: 32000
