@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class TransitionPanel : MonoBehaviour
 {
-    [SerializeField] Animator transitionAnim;
+    Animator transitionAnim;
+    [SerializeField] string outEffect;
+    [SerializeField] string inEffect;
 
     private void Awake()
     {
         transitionAnim = GetComponent<Animator>();
-        transitionAnim.Play("Fade Out");
+        transitionAnim.Play(outEffect);
     }
     private void Update()
     {
@@ -19,15 +21,15 @@ public class TransitionPanel : MonoBehaviour
         }
     }
 
-    public void FadeInTransition()
+    public void InEffectTransition()
     {
         gameObject.SetActive(true);
-        transitionAnim.Play("Fade In");
+        transitionAnim.Play(inEffect);
     }
 
-    public void FadeOutTransition()
+    public void OutEffectTransition()
     {
-        transitionAnim.Play("Fade Out");
+        transitionAnim.Play(outEffect);
         gameObject.SetActive(false);
     }
 }

@@ -19,7 +19,7 @@ public class SceneSwitch : MonoBehaviour
 
     IEnumerator LoadScene(int goToSceneIndex)
     {
-        transitionPanel.FadeInTransition();
+        transitionPanel.InEffectTransition();
         yield return new WaitForSeconds(1f);
         SceneManager.LoadSceneAsync(goToSceneIndex); 
     }
