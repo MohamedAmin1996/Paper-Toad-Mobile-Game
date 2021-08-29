@@ -10,8 +10,6 @@ public class MusicLooper : MonoBehaviour
     AudioSource audioSource;
     float currentPos;
 
-    [SerializeField] float hZ;
-
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -19,8 +17,6 @@ public class MusicLooper : MonoBehaviour
         startLoop = mySongInfo.startLoop;
         endLoop = mySongInfo.endLoop;
         audioSource.Play();
-
-        hZ = audioSource.clip.samples;
     }
 
     void Update()

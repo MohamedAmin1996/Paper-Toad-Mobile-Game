@@ -5,13 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
+    [SerializeField] TransitionPanel transitionPanel;
     bool activated = false;
+
     public void SwitchScene(int goToSceneIndex)
     {
         if (!activated)
         {
-            SceneManager.LoadSceneAsync(goToSceneIndex);
+            StartCoroutine(LoadScene(goToSceneIndex));
             activated = true;
         }
+    }
+
+    IEnumerator LoadScene(int goToSceneIndex)
+    {
+        transitionPanel.FadeInTransition();
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadSceneAsync(goToSceneIndex); 
     }
 }
