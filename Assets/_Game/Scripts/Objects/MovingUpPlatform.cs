@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingUpPlatform : MonoBehaviour
 {
     [SerializeField] float maxHeight;
     [SerializeField] float moveSpeed;
-    public Rigidbody rb;
     [SerializeField] Vector3 startPos;
     [SerializeField] Vector3 endPos;
+    Rigidbody rb;
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         startPos = rb.position;
         endPos = new Vector3(startPos.x, startPos.y + maxHeight, startPos.z);
-
     }
 
     void FixedUpdate()
@@ -25,6 +25,8 @@ public class MovingPlatform : MonoBehaviour
             rb.velocity = Vector3.zero;
             rb.position = startPos;
         }
+
+
     }
 
     
